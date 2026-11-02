@@ -1,0 +1,41 @@
+{
+  "name": "@mytools-all/mytools-ipconfig",
+  "version": "0.1.0",
+  "description": "本机网卡与 IP 信息一览：IPv4 / IPv6、网关、DNS、MAC。",
+  "type": "module",
+  "main": "index.html",
+  "license": "MIT",
+  "author": "MyTools Contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mytools-all/mytools-ipconfig.git"
+  },
+  "homepage": "https://github.com/mytools-all/mytools-ipconfig#readme",
+  "bugs": {
+    "url": "https://github.com/mytools-all/mytools-ipconfig/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "plugin.json",
+    "*.html",
+    "*.css",
+    "*.svg",
+    "*.png",
+    "vendor/",
+    "LICENSE",
+    "THIRD_PARTY.md",
+    "README.md",
+    "adapterDetails.mjs",
+    "app.mjs",
+    "common.mjs",
+    "utils.mjs",
+    "*.js",
+    "*.LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  }
+}

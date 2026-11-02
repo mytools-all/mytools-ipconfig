@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>我的 IP</title>
+    <link rel="stylesheet" href="tool.css" />
+    <style>
+      .ip-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .ip-card {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+      }
+      .ip-card b {
+        display: block;
+        font: 20px Consolas;
+        margin: 8px 0;
+      }
+      .adapter-info {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 7px;
+      }
+      .adapter-info span {
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+      }
+      .adapter-info .label {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="toolbar">
+        <strong>我的 IP</strong><span class="spacer"></span
+        ><button id="refresh">刷新</button><button id="copy">复制全部</button
+        ><button id="theme">◐</button>
+      </div>
+      <div class="content stack">
+        <div id="overview" class="ip-grid"></div>
+        <div class="row">
+          <strong>网络适配器</strong><span class="spacer"></span
+          ><label><input id="inactive" type="checkbox" checked />显示未连接</label>
+        </div>
+        <div id="adapters" class="stack"></div>
+        <details class="panel"><summary>完整网络配置 · ipconfig /all</summary><pre id="full-report" style="white-space:pre-wrap;overflow-wrap:anywhere;user-select:text"></pre></details>
+        <div class="panel">
+          <div class="row">
+            <strong>公网与连通性</strong><span class="spacer"></span
+            ><button id="public">查询公网 IP</button
+            ><button id="latency">测试延迟</button>
+          </div>
+          <p class="muted">
+            公网查询会连接外部服务；VPN / 代理可能改变查询结果。
+          </p>
+          <div id="network" class="stack"></div>
+        </div>
+      </div>
+      <footer id="status" class="status" role="status"></footer>
+    </main>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

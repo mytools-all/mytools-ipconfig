@@ -1,0 +1,26 @@
+{
+  "name": "mytools-ipconfig",
+  "description": "本机网卡与 IP 信息一览：IPv4 / IPv6、网关、DNS、MAC。",
+  "version": "0.1.0",
+  "apiVersion": 1,
+  "main": "index.html",
+  "capabilities": [
+    "system.netinterfaces",
+    "clipboard.write",
+    "net.fetch",
+    "system.networkdetails"
+  ],
+  "features": [
+    {
+      "code": "ipconfig",
+      "explain": "打开我的 IP",
+      "cmds": [
+        "ip",
+        "ipconfig",
+        "我的IP",
+        "网卡"
+      ]
+    }
+  ],
+  "pluginName": "我的 IP"
+}
