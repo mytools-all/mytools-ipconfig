@@ -97,8 +97,8 @@ $("#latency").onclick = action(async () => {
           Math.round(performance.now() - start) +
           " ms · HTTP " +
           r.status;
-      } catch {
-        line.textContent = name + "：连接失败";
+      } catch (error) {
+        line.textContent = name + "：连接失败 · " + (error.message || String(error));
       }
     }
     status("显示 HTTP 往返耗时（包含授权等待及代理影响）");
